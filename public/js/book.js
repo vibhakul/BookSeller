@@ -10,7 +10,7 @@ $(document).ready(function() {
     populateTable('','');
 });
 
-    $('#bookList table tbody').on('click', 'td a.linkshowbook', updatereviewbook);
+    $('#bookList table tbody').on('click', 'tr', updatereviewbook);
     $('#addBookLink').on('click', 'a.linkupdatebook', populateBookData);
     $('#addBookLink').on('click', 'a.linkaddreview', populateBookReview);
     $('#addBookLink').on('click', 'a.linkshowaddbook', showAddBook);
@@ -349,15 +349,17 @@ function updatereviewbook(){
     $('#addBookLink a').each(function() {
         this.rel = id;
     });
+    $('.highlight').removeClass("highlight");
+    $(this).addClass("highlight");
 }
 
 function filledTable(data)
 { 
     var tableContent = '';
     $.each(data, function(){
-            tableContent += '<tr>';
-            tableContent += '<td><a href="#" class="linkshowbook" rel="' + this._id + '">' + this.isbn + '</a></td>';
-            tableContent += '<td>' + this.title + '</td>';
+            tableContent += '<tr class="" rel="' + this._id + '">';
+            tableContent += '<td>' + this.isbn + '</td>';
+            tableContent += '<td >' + this.title + '</td>';
             tableContent += '<td>' + this.author + '</td>';
             tableContent += '<td>' + this.price/100 + '</td>';
             tableContent += '<td><div id="'+this._id+'">' + this.average_rate/100 + '</div></td>';
@@ -372,9 +374,15 @@ function sortbypricebookData (){
     if($(this).attr('rel') == 'asc'){
         var op = 'asc';
         $(this).attr('rel', 'desc');
+        $('.headerSortDown').removeClass('headerSortDown');
+        $('.headerSortUp').removeClass('headerSortUp');
+        $(this).addClass('headerSortDown');
     }else{
         $(this).attr('rel', 'asc');
         var op = 'desc';
+        $('.headerSortDown').removeClass('headerSortDown');
+        $('.headerSortUp').removeClass('headerSortUp');
+        $(this).addClass('headerSortUp')
     }   
 
     bookList.sort(function(a, b){
@@ -393,9 +401,15 @@ function sortbyratebookData (){
     if($(this).attr('rel') == 'asc'){
         var op = 'asc';
         $(this).attr('rel', 'desc');
+        $('.headerSortDown').removeClass('headerSortDown');
+        $('.headerSortUp').removeClass('headerSortUp');
+        $(this).addClass('headerSortDown');
     }else{
         $(this).attr('rel', 'asc');
         var op = 'desc';
+        $('.headerSortDown').removeClass('headerSortDown');
+        $('.headerSortUp').removeClass('headerSortUp');
+        $(this).addClass('headerSortUp');
     } 
     bookList.sort(function(a, b){
         if(op == 'asc')
@@ -469,4 +483,6 @@ function addReviewRatingStar(reviews)
         });
     });
 }
+
+
 
