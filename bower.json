@@ -1,0 +1,13 @@
+{
+  "name": "yo-bookseller",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "jquery": "~3.0.0",
+    "jquery-ui": "~1.12.0"
+  }
+}

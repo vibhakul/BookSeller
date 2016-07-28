@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head> 
+		<title>  Library </title> 
+		<link rel='stylesheet' href='/css/style.css'/>
+		<link rel="stylesheet" href="/css/jquery.rateyo.min.css">
+        <script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
+        <!--<link rel="stylesheet" href="/stylesheets/jquery.rateyo.min.css">-->
+    </head>    
+	<body>
+        <div id='wrapper'>    
+            <h2> ${data.title} </h2>
+            <hr/>
+            <div id="addBook">
+                <h3> Add/Update Book </h3>    
+                <table >
+                    <tbody>
+                        <tr></tr>    
+                        <tr>
+                            <td> Title : </td>
+                            <td><input type="text" id="inputbooktitle" placeholder=" Title "/></td>
+                            <td> ISBN Code : </td>
+                            <td><input type="text" id="inputbookisbn" placeholder=" Unique ISBN Code"/></td>
+                        </tr>
+                        <tr>
+                            <td> Author : </td>
+                            <td><input type="text" id="inputbookauthor" placeholder=" Author "/></td>
+                            <td> Price : </td>
+                            <td><input type="text" id="inputbookprice"  maxlength="12" placeholder=" Ex:110.00"/></td>
+                        </tr> 
+                        <tr>
+                            <td/>
+                            <td><button id="btnAdd"> Add Book </button>
+                            <button id="btnUpdate">Update Book</button></td>
+                            <td><input type="hidden" id="hiddenbookid" value=""/></td> 
+                            <td/>  
+                        </tr> 
+                    </tbody>   
+                </table> 
+            </div> 
+            <div id="addReview">
+                <h3> Add Review </h3>    
+                <table >
+                    <tbody>    
+                        <tr>
+                            <td> Title : </td>
+                            <td><lable id="labelreviewbooktitle" placeholder=" Book Title "></lable></td>
+                            <td> ISBN Code : </td>
+                            <td><lable id="labelreviewbookisbn" placeholder=" Book ISBN"></lable></td>
+                        </tr>
+                        <tr>
+                            <td> Name : </td>
+                            <td><input type="text" id="inputbookreviewername" placeholder=" Name "/></td>
+                            <td> Reviews : </td>
+                            <td><input type="text" id="inputbookreview" placeholder=" Reviews"/></td>
+                        </tr> 
+                        <tr>
+                            <td> Rating : </td>
+                            <td><div id="reviewrate"></div></td>
+                         <!--    <td>
+                                <select id="inputbookreviewrate" >
+                                    <option for(i from 1 to 5)>${i}</option>
+                                </select>
+                             </td>  -->  
+                            <td><input type="hidden" id="hiddenreviewbookid" value=""/></td>
+                        </tr> 
+                        <tr>
+                            <td/>
+                            <td><button id="btnAddReview"> Add Review </button></td>
+                            <td/>
+                            <td/>
+                            <!--<td><input type="button" id="btnDelete" value="Delete Book" /></td> -->   
+                        </tr> 
+                    </tbody> 
+                </table> 
+            </div>
+            <div id="findby">
+                <h3> Find By: </h3> 
+                <tbody>
+                    <th>
+                        <select id="selectedfield" class="select-style">
+                            <option>title</option>
+                            <option>author</option>
+                            <option>name</option>
+                        </select>
+                    </th>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <th><input type='text' id="inputsearch"/></th>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <th><button id="btnSearch"> Search </button></th>
+                </tbody> 
+            </div>
+            <div id="addBookLink">
+                <br/>
+                <tbody>
+                    <th><a href="#" class="linkfindby" rel="">Find By</a></th>
+                    <th>  &nbsp;&nbsp; </th>
+                    <th><a href="#" class="linkclearsearch" rel="">Clear</a></th>
+                    <th>  &nbsp;&nbsp; </th>
+                    <th><a href="#" class="linkshowaddbook" rel="">Add Book</a></th>
+                    <th>  &nbsp;&nbsp; </th>
+                    <th><a href="#" class="linkupdatebook" rel="">Update Book</a></th>
+                    <th>  &nbsp;&nbsp; </th>
+                    <th><a href="#" class="linkaddreview" rel="">Add Review</a></th>
+                </tbody> 
+            </div> 
+            <hr/> 
+        	<h3> Book List </h3>
+        	<div id="bookList">  
+            	<table>
+                	<thead>
+                        <th name='bookisbn'> ISBN </th>
+                        <th name='booktitle'> Book Title </th>
+                        <th name='bookauthor'> Author </th>
+                        <th name='bookprice' rel="asc"> Price INR </th>
+                        <th name='bookrate' rel="asc"> Avg. Rating </th>
+                        <th name='bookreviews'> Reviews </th>
+                        <th></th>
+                    </thead>        
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <hr/>
+            <div id="reviewList">
+                <div id="bookInfo"></div>  
+                <table>
+                    <thead>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>          
+        </div>
+        <script language='JavaScript' type="text/javascript" src="/components/jquery/dist/jquery.min.js"></script>
+        <script language='JavaScript' type="text/javascript" src="/js/jquery.rateyo.min.js"></script>
+        <script language='JavaScript' type="text/javascript" src="/components/jquery-ui/jquery-ui.min.js"></script>
+        <script language='JavaScript' type="text/javascript" src='/js/book.js'></script>
+    </body>
+</html>        
+
+        
