@@ -24,6 +24,13 @@ module.exports = function (grunt) {
         }
       }
     },
+    uglify: {
+      minifed: {
+        files: {
+          'public/js/book.min.js': 'public/js/book.js'
+        }
+      }
+    },
     watch: {
       options: {
         nospawn: true,
@@ -33,9 +40,10 @@ module.exports = function (grunt) {
         files: [
           'app.js',
           'app/**/*.js',
-          'config/*.js'
+          'config/*.js',
+          'public/js/*.min.js'
         ],
-        tasks: ['develop', 'delayed-livereload']
+        tasks: ['develop','uglify', 'delayed-livereload']
       },
       css: {
         files: [
@@ -73,7 +81,7 @@ module.exports = function (grunt) {
         });
     }, 500);
   });
-
+  //grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default', [
     'less',
     'develop', 
