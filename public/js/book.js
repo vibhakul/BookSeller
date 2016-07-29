@@ -376,13 +376,13 @@ function sortbypricebookData (){
         $(this).attr('rel', 'desc');
         $('.headerSortDown').removeClass('headerSortDown');
         $('.headerSortUp').removeClass('headerSortUp');
-        $(this).addClass('headerSortDown');
+        $(this).addClass('headerSortUp');
     }else{
         $(this).attr('rel', 'asc');
         var op = 'desc';
         $('.headerSortDown').removeClass('headerSortDown');
         $('.headerSortUp').removeClass('headerSortUp');
-        $(this).addClass('headerSortUp')
+        $(this).addClass('headerSortDown')
     }   
 
     bookList.sort(function(a, b){
@@ -403,13 +403,13 @@ function sortbyratebookData (){
         $(this).attr('rel', 'desc');
         $('.headerSortDown').removeClass('headerSortDown');
         $('.headerSortUp').removeClass('headerSortUp');
-        $(this).addClass('headerSortDown');
+        $(this).addClass('headerSortUp');
     }else{
         $(this).attr('rel', 'asc');
         var op = 'desc';
         $('.headerSortDown').removeClass('headerSortDown');
         $('.headerSortUp').removeClass('headerSortUp');
-        $(this).addClass('headerSortUp');
+        $(this).addClass('headerSortDown');
     } 
     bookList.sort(function(a, b){
         if(op == 'asc')
