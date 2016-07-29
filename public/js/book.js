@@ -2,11 +2,6 @@ var bookList = [];
 
 // DOM Ready =============================================================
 $(document).ready(function() {
-    $("#addReview").hide();
-    $(".linkupdatebook").hide();
-    $(".linkaddreview").hide();
-    $("#addBook").hide();
-    $('#findby').hide();
     populateTable('','');
 });
 

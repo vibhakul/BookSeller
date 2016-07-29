@@ -5,13 +5,13 @@
         <link rel='stylesheet' href='/css/style.css'/>
         <link rel="stylesheet" href="/css/jquery.rateyo.min.css">
         <script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
-        <!--<link rel="stylesheet" href="/stylesheets/jquery.rateyo.min.css">-->
+        <!-- <link rel="stylesheet" href="/components/jquery-rateyo/min/jquery.rateyo.min.css"> -->
     </head>    
     <body>
         <div id='wrapper'>    
             <h2> ${data.title} </h2>
             <hr/>
-            <div id="addBook">
+            <div id="addBook" class="postreply">
                 <h3> Add/Update Book </h3>    
                 <table >
                     <tbody>
@@ -38,7 +38,7 @@
                     </tbody>   
                 </table> 
             </div> 
-            <div id="addReview">
+            <div id="addReview" class="postreply">
                 <h3> Add Review </h3>    
                 <table >
                     <tbody>    
@@ -74,7 +74,7 @@
                     </tbody> 
                 </table> 
             </div>
-            <div id="findby">
+            <div id="findby" class="postreply">
                 <h3> Find By: </h3> 
                 <tbody>
                     <th>
@@ -99,9 +99,9 @@
                     <th>  &nbsp;&nbsp; </th>
                     <th><a href="#" class="linkshowaddbook" rel="">Add Book</a></th>
                     <th>  &nbsp;&nbsp; </th>
-                    <th><a href="#" class="linkupdatebook" rel="">Update Book</a></th>
+                    <th><a href="#" class="postreply linkupdatebook" rel="">Update Book</a></th>
                     <th>  &nbsp;&nbsp; </th>
-                    <th><a href="#" class="linkaddreview" rel="">Add Review</a></th>
+                    <th><a href="#" class="postreply linkaddreview" rel="">Add Review</a></th>
                 </tbody> 
             </div> 
             <hr/> 
